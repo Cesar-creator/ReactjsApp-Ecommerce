@@ -19,11 +19,12 @@ export const Header = () => {
 
   const { sideBarTheme, setSideBarTheme, itemNumber, setItemNumber } = useContext(ThemeContext);
   const [chartIsOpen, setchartIsOpen] = useState(false);
-
   const handleOpenSideBar = () => {
     //setSideBarIsOpen(true);
     setSideBarTheme(true);
   };
+
+  console.log(sideBarTheme);
 
   const handleCloseSideBar = () => {
     //setSideBarIsOpen(false);
@@ -36,8 +37,8 @@ export const Header = () => {
     <header>
       <div className="app__subHeader">
         <img className="menu-icon" src={mobileMenuIcon} alt="menu-icon" onClick={handleOpenSideBar} />
-        <img src={Logo} alt="logo" />
-        <div className={`SideBar ${sideBarTheme ? "showBar" : "hidden"}`}>
+        <img src={Logo} alt="logo" className="menu_logo" />
+        <div className={`${sideBarTheme ? "showBar" : "sideBar"}`}>
           <img className="close-icon" src={closeIcon} alt="close" onClick={handleCloseSideBar} />
           <a className="app__menu">Collections</a>
           <a className="app__menu">Men</a>
