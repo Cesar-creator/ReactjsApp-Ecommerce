@@ -23,6 +23,7 @@ export const AppEcommerce = () => {
     const { sliderIndex, sliderdata, theme, setTheme, itemNumber, setItemNumber } = useContext(ThemeContext)
     const { handleNext, handlePrevious, handleHover } = useSlider();
     const [state,setState] = useState(0);
+    console.log(theme)
 
     return (
         <div className="app__container">
@@ -88,6 +89,7 @@ export const AppEcommerce = () => {
                         <button className="add-cart" onClick={() => setItemNumber(itemNumber + state)}><img src={chartIcon2} alt="chat" /> Add to cart </button>
                     </div>
                 </div>
+                <div className={theme ? "app__overlay" : "hidden"}></div>
 
             </div>
 
